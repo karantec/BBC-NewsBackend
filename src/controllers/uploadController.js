@@ -23,7 +23,7 @@ const uploadFiles = async (req, res) => {
 
     // Prepare S3 upload parameters
     const params = {
-      Bucket: process.env.AWS_BUCKET_NAME, // Correct your bucket env variable
+      Bucket: process.env.AWS_BUCKET_NAME2, // Correct your bucket env variable
       Key: file.originalname, // File name
       Body: file.buffer, // File content as buffer
       ContentType: file.mimetype, // File MIME type
