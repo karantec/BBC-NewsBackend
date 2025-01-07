@@ -6,9 +6,10 @@ const connectDB = require('./config/database');
 const authRoutes = require('./routes/authRoutes');
 const modalDataRoutes = require('./routes/ArchitectureRoutes');
 const interiorRoutes = require('./routes/InteriorRoutes');
+
 const testimonialRoutes = require('./routes/testimonialRoutes');
-const ServiceRoutes = require('./routes/ServiceRoutes');
 const CarrierRoutes=require('./routes/CarrierRoutes');
+const ServiceRoutes = require('./routes/ServiceRoutes');
 const adminRouter = require('./routes/adminRoute')
 const cors = require('cors'); // Import CORS
 
