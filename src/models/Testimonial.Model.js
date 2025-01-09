@@ -14,7 +14,7 @@ const TestimonialSchema = new mongoose.Schema({
     required: true 
   },
   profilePicture: { 
-    type: String, // Optional field, no `required` constraint
+    type: [String], // Optional field, no `required` constraint
   },
   rating: { 
     type: Number, 

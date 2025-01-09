@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { createServices, getAllServices, getServiceById, updateService, deleteService } = require('../controllers/ServiceController');
+const { createServices, getAllServices, getServiceById, updateService, deleteService, handleMulterError } = require('../controllers/ServiceController');
 
 // Route to create a new testimonial
 router.post('/services', createServices);
@@ -17,5 +17,7 @@ router.put('/services/:id', updateService);
 
 // Route to delete a testimonial by ID
 router.delete('/services/:id', deleteService);
+
+router.use(handleMulterError);
 
 module.exports = router;

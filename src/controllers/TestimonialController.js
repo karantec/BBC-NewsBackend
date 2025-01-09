@@ -18,6 +18,24 @@ const createTestimonial = async (req, res) => {
     }
 };
 
+
+const handleMulterError = (err, req, res, next) => {
+    if (err instanceof multer.MulterError) {
+        if (err.code === 'LIMIT_FILE_SIZE') {
+            return res.status(400).json({
+                success: false,
+                error: 'File size limit exceeded. Maximum size is 10MB.'
+            });
+        }
+        if (err.code === 'LIMIT_FILE_COUNT') {
+            return res.status(400).json({
+                success: false,
+                error: 'Too many files uploaded.'
+            });
+        }
+    }
+    next(err);
+};
 // Get all testimonials
 const getAllTestimonials = async (req, res) => {
     try {
@@ -115,6 +133,7 @@ const deleteTestimonial = async (req, res) => {
 
 module.exports = {
     createTestimonial,
+    handleMulterError,
     getAllTestimonials,
     getTestimonialById,
     updateTestimonial,

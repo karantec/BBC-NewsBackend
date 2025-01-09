@@ -17,7 +17,23 @@ const createServices = async (req, res) => {
         res.status(500).json({ success: false, message: "Failed to create testimonial", details: error.message });
     }
 };
-
+const handleMulterError = (err, req, res, next) => {
+    if (err instanceof multer.MulterError) {
+        if (err.code === 'LIMIT_FILE_SIZE') {
+            return res.status(400).json({
+                success: false,
+                error: 'File size limit exceeded. Maximum size is 10MB.'
+            });
+        }
+        if (err.code === 'LIMIT_FILE_COUNT') {
+            return res.status(400).json({
+                success: false,
+                error: 'Too many files uploaded.'
+            });
+        }
+    }
+    next(err);
+};
 // Get all testimonials
 const getAllServices = async (req, res) => {
     try {
@@ -115,6 +131,7 @@ const deleteService = async (req, res) => {
 
 module.exports = {
     createServices,
+    handleMulterError,
     getAllServices,
     getServiceById,
     updateService,

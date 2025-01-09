@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const {
     createTestimonial,
+    handleMulterError,
     getAllTestimonials,
     getTestimonialById,
     updateTestimonial,
@@ -22,5 +23,7 @@ router.put('/testimonials/:id', updateTestimonial);
 
 // Route to delete a testimonial by ID
 router.delete('/testimonials/:id', deleteTestimonial);
+
+router.use(handleMulterError);
 
 module.exports = router;

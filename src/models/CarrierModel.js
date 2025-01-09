@@ -9,10 +9,7 @@ const CarrierSchema = new mongoose.Schema({
     type: String, 
     required: true 
   },
-  company: {
-    type: String,
-    required: true
-  },
+  
   location: {
     type: String,
     required: true
@@ -23,7 +20,7 @@ const CarrierSchema = new mongoose.Schema({
   },
   jobType: {
     type: String,
-    enum: ['Full-time', 'Part-time', 'Contract'],
+    enum: ['Full-time', 'Part-time', 'Contract','Internship'],
     required: true
   },
   postedAt: {

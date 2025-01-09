@@ -12,6 +12,7 @@ const s3 = new AWS.S3({
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
+
 // File Upload Controller
 const uploadFiles = async (req, res) => {
   try {

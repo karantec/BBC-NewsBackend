@@ -11,7 +11,7 @@ const ServiceSchema = new mongoose.Schema({
   },
 
   ServicePicture: { 
-    type: String, // Optional field, no `required` constraint
+    type: [String], // Optional field, no `required` constraint
   },
   
   createdAt: { 

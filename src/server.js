@@ -8,6 +8,7 @@ const modalDataRoutes = require('./routes/ArchitectureRoutes');
 const interiorRoutes = require('./routes/InteriorRoutes');
 
 const testimonialRoutes = require('./routes/testimonialRoutes');
+const TeamRoutes=require('./routes/TeamRoutes');
 const CarrierRoutes=require('./routes/CarrierRoutes');
 const ServiceRoutes = require('./routes/ServiceRoutes');
 const adminRouter = require('./routes/adminRoute')
@@ -31,6 +32,7 @@ app.use('/api/interior', interiorRoutes);
 app.use('/api/testimonial', testimonialRoutes);
 app.use('/api/service',ServiceRoutes)
 app.use('/api/carrier', CarrierRoutes)
+app.use('/api/team', TeamRoutes)
 app.use(adminRouter)
 
 // Function to list all endpoints
