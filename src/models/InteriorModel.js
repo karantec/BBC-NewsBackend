@@ -11,10 +11,12 @@ const InteriorDataSchema = new mongoose.Schema({
       'Software Dev', 
       'Editing', 
       '2D & 3D Modeling', 
-      'Animation'
+      'Animation',
+      'GamiFication'
     ], 
     required: true 
   },
+  ClientName:{type:String},
   Description: { type: String },
   ProductDeployedLink: { type: String },
   ProductVideo: [String],

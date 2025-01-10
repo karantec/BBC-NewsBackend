@@ -22,6 +22,10 @@ const TestimonialSchema = new mongoose.Schema({
     max: 5, // Assuming a 5-star rating system
     required: true 
   },
+  portfolioLink: { 
+    type: String, 
+    required: true 
+  },
   createdAt: { 
     type: Date, 
     default: Date.now 
