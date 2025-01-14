@@ -12,7 +12,6 @@ const s3 = new AWS.S3({
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
-
 // File Upload Controller
 const uploadFiles = async (req, res) => {
   try {
@@ -22,9 +21,9 @@ const uploadFiles = async (req, res) => {
 
     const file = req.file;
 
-    // Prepare S3 upload parameters
+    // Prepare S3 upload parameters with hardcoded bucket name 'newsbuckets'
     const params = {
-      Bucket: process.env.AWS_BUCKET_NAME2, // Correct your bucket env variable
+      Bucket: "newsbuckets", // Hardcoded bucket name
       Key: file.originalname, // File name
       Body: file.buffer, // File content as buffer
       ContentType: file.mimetype, // File MIME type

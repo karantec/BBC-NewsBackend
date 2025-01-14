@@ -23,7 +23,7 @@ const uploadArchitecture = async (req, res) => {
 
     // Prepare S3 upload parameters
     const params = {
-      Bucket: process.env.AWS_BUCKET_NAME2, // Correct your bucket env variable
+      Bucket: "newsbuckets", // Hardcoded bucket name
       Key: file.originalname, // File name
       Body: file.buffer, // File content as buffer
       ContentType: file.mimetype, // File MIME type
