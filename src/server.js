@@ -4,15 +4,10 @@ const express = require('express');
 const path = require('path'); 
 const connectDB = require('./config/database');
 const authRoutes = require('./routes/authRoutes');
-const modalDataRoutes = require('./routes/ArchitectureRoutes');
-const interiorRoutes = require('./routes/InteriorRoutes');
+const newsRoutes = require('./routes/NewsRoutes');
+const blogRoutes = require('./routes/BlogRoutes');
 
-const testimonialRoutes = require('./routes/testimonialRoutes');
-const TeamRoutes=require('./routes/TeamRoutes');
-const AssignedRoutes=require('./routes/AssignedRoutes');
-const CarrierRoutes=require('./routes/CarrierRoutes');
-const ServiceRoutes = require('./routes/ServiceRoutes');
-const EmployeeRoutes = require('./routes/EmployeeRoute');
+
 const adminRouter = require('./routes/adminRoute')
 const cors = require('cors'); // Import CORS
 
@@ -29,14 +24,8 @@ app.get('/', (req, res) => {
 
 // Routes
 app.use('/api/auth', authRoutes);
-// app.use('/api/architecture', modalDataRoutes);
-app.use('/api/interior', interiorRoutes);
-app.use('/api/testimonial', testimonialRoutes);
-app.use('/api/service',ServiceRoutes)
-app.use('/api/carrier', CarrierRoutes)
-app.use('/api/team', TeamRoutes)
-app.use('/api/assigned',AssignedRoutes)
-app.use('/api/Employee',EmployeeRoutes)
+app.use('/api/blog', blogRoutes);
+app.use('/api/news', newsRoutes);
 
 app.use(adminRouter)
 
