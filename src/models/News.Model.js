@@ -17,7 +17,6 @@ const NewsDataSchema = new mongoose.Schema({
 });
 
 NewsDataSchema.pre('save', async function (next) {
-  // Pre-save hook logic can be added here
   next();
 });
 

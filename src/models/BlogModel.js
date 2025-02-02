@@ -20,8 +20,8 @@ const BlogDataSchema = new mongoose.Schema({
   author: { type: String, default: 'Anonymous' },
   tags: [String],
   publishedDate: { type: Date, default: Date.now },
-  thumbnailUrl: { type: String }, // For the main thumbnail
-  BlogImages: [{ type: String }], // Array to store image paths/URLs
+  thumbnailUrl: { type: String }, 
+  BlogImages: [{ type: String }], 
 });
 
 
