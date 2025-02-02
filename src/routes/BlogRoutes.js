@@ -18,7 +18,7 @@ router.put('/update/blogs/:id', updateBlog);
 // Route to delete interior data by ID
 router.delete('/blogs/:id', deleteBlog);
 // Get route for retrieving all interior data
-router.get('/', getBlogs); // New route for all data
+router.get('/blogs', getBlogs); // New route for all data
 
 router.get('/blogs/:id', getBlog);
 // Middleware to handle file upload errors

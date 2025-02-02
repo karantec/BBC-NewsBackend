@@ -200,7 +200,7 @@ const updateBlog = async (req, res) => {
 
 const getBlogs = async(req,res)=>{
     try {
-        const data = await BlogData.findAll({})
+        const data = await BlogData.find()
         if(!data){
             return res.status(404).json({message:"Not blog is present"})
         }

@@ -71,7 +71,7 @@ const logEndpoints = () => {
 connectDB();
 
 // Start server
-const PORT = process.env.PORT || 3000;
+const PORT = 3001;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
     logEndpoints(); // Call the function to log endpoints

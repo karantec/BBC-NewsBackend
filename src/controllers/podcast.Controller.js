@@ -38,7 +38,7 @@ const updatePodcast = async (req, res) => {
 
 const getPodcasts = async(req,res)=>{
     try {
-        const data = await Podcast.findAll({})
+        const data = await Podcast.find({})
         if(!data){
             return res.status(404).json({message:"Not podcast is present"})
         }
