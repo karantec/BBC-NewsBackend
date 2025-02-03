@@ -7,6 +7,7 @@ const authRoutes = require('./routes/authRoutes');
 const newsRoutes = require('./routes/NewsRoutes');
 const blogRoutes = require('./routes/BlogRoutes');
 const podcastRoute = require("./routes/podcastRoute");
+const breakingNewsRouter = require('./routes/BreakingNewRoute');
 
 
 const adminRouter = require('./routes/adminRoute')
@@ -27,7 +28,8 @@ app.get('/', (req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/blog', blogRoutes);
 app.use('/api/news', newsRoutes);
-app.use("/api/podcast",podcastRoute)
+app.use("/api/podcast",podcastRoute);
+app.use('/api/breakingnews',breakingNewsRouter);
 
 app.use(adminRouter)
 
