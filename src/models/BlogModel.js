@@ -14,7 +14,7 @@ const BlogDataSchema = new mongoose.Schema({
       'खेल',
       'मौसम',
       'जायका',
-      'स्वास्थ्य','व्यापार' ,'भारत लिंकेज राष्ट्रीय और विदेश की जगह अंतर्राष्ट्रीय कर दीजिए'],
+      'स्वास्थ्य','व्यापार'],
       required:true
   },
   author: { type: String, default: 'Anonymous' },

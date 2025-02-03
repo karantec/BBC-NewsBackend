@@ -4,7 +4,8 @@ const {
     createNews,
     handleMulterError,
      updateModalData, deleteModalData, 
-    getModalDataById, getModalData } = require('../controllers/News.Controller');
+    getModalDataById, getModalData, 
+    getAllNews} = require('../controllers/News.Controller');
 
 // Route to create a new entry with image upload
 router.post('/createNews',createNews);
@@ -18,7 +19,7 @@ router.delete('/deleteNews/:id', deleteModalData);
 router.get('/News/:id', getModalDataById);
 
 // Route to get all modal data or a specific entry by ID
-router.get('/News/:id?', getModalData);
+router.get('/News', getAllNews);
 router.use(handleMulterError);
 
 module.exports = router;

@@ -6,7 +6,17 @@ const NewsDataSchema = new mongoose.Schema({
   content: { type: String, required: true },
   category: { 
     type: String, 
-    enum: ['भारत', 'विदेश', 'मनोरंजन', 'खेल', 'विज्ञान-टेक्नॉलॉजी', 'सोशल', 'वीडियो', 'पॉडकास्ट'], 
+    enum:['अंतरराष्ट्रीय',
+      'राष्ट्रीय',
+      'राज्य',
+      'राजनीति',
+      'शिक्षा',
+      'रोजगार', 
+      'पर्यटन',
+      'खेल',
+      'मौसम',
+      'जायका',
+      'स्वास्थ्य','व्यापार'],
     required: true 
   },
   tags: [String],

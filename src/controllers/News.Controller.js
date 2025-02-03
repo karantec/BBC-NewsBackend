@@ -118,7 +118,15 @@ const deleteModalData = async (req, res) => {
     }
 };
 
-
+const getAllNews = async (req, res) => {
+    try {
+      const newsList = await ModalData.find();
+      res.status(200).json({ success: true, data: newsList });
+    } catch (error) {
+      console.error("Error fetching news:", error);
+      res.status(500).json({ success: false, error: "Failed to fetch news", details: error.message });
+    }
+  };
 // Controller to Fetch ModalData
 const getModalData = async (req, res) => {
     try {
@@ -178,5 +186,7 @@ module.exports = {
     updateModalData,
     deleteModalData,
     getModalData,
+    getAllNews,
+    
     getModalDataById
 };
