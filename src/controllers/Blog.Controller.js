@@ -214,7 +214,7 @@ const getBlogs = async(req,res)=>{
 const getBlog = async(req,res)=>{
     try {
         const {id} =  await req.params
-        const data = await BlogData.findById({id})
+        const data = await BlogData.findById(id)
         if(!data){
             return res.status(404).json({message:"Not blog is present"})
         }

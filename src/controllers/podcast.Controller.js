@@ -52,7 +52,7 @@ const getPodcasts = async(req,res)=>{
 const getPodcast = async(req,res)=>{
     try {
         const {id} =  await req.params
-        const data = await Podcast.findById({id})
+        const data = await Podcast.findById(id)
         if(!data){
             return res.status(404).json({message:"Not blog is present"})
         }
